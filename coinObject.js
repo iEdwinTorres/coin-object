@@ -20,9 +20,6 @@ const Coin = {
 			image.setAttribute("src", "resources/Tails.png");
 		}
 		return image;
-	},
-	test: function() {
-		console.log(this);
 	}
 };
 
@@ -44,12 +41,12 @@ function display20Images() {
 	for (let i = 0; i < 20; i++) {
 		Coin.flip();
 		if (Coin.state == 0) {
-			var coinSide = document.createElement("img");
+			var coinSide = Coin.toHTML();
 			coinSide.src = "resources/Heads.png";
 			document.body.appendChild(coinSide);
 			results.push(Coin.state);
 		} else {
-			var coinSide = document.createElement("img");
+			var coinSide = Coin.toHTML();
 			coinSide.src = "resources/Tails.png";
 			document.body.appendChild(coinSide);
 			results.push(Coin.state);
